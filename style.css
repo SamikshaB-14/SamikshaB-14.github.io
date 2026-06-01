@@ -75,13 +75,15 @@ nav {
 
 /* HERO */
 #hero {
-  min-height: 100vh;
+  min-height: 80vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
   padding: 6rem 2rem 2rem;
+  opacity: 1;
+  transform: translateY(0);
 }
 
 #hero h1 {
@@ -418,6 +420,10 @@ section.visible {
   .exp-header {
     flex-direction: column;
   }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* CUSTOM CURSOR */
@@ -439,4 +445,121 @@ section.visible {
 
 .cursor.hovering {
   opacity: 0;
+}
+
+/* ABOUT */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 3rem;
+  align-items: center;
+}
+
+.about-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.about-text p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+.about-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+
+.about-info span {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+}
+
+.about-info p {
+  font-size: 0.9rem;
+  color: var(--text);
+  margin-top: 2px;
+}
+
+.about-photo img {
+  width: 280px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid var(--border);
+}
+
+@media (max-width: 768px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-photo {
+    display: flex;
+    justify-content: center;
+  }
+
+  .about-photo img {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+.about-photo img {
+  width: 280px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid rgba(127, 119, 221, 0.4);
+  box-shadow: 0 0 30px rgba(127, 119, 221, 0.2);
+  filter: brightness(0.9) contrast(1.05);
+}
+
+/* BIGGER FONTS */
+.about-text p {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.about-info p {
+  font-size: 1rem;
+  color: var(--text);
+  margin-top: 2px;
+}
+
+.chips span {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  padding: 0.35rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.95rem;
+}
+
+.exp-card ul li {
+  font-size: 1rem;
+  color: var(--text-muted);
+  padding-left: 1rem;
+  position: relative;
+}
+
+.proj-desc {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  flex: 1;
+}
+
+.contact-value {
+  font-size: 1rem;
+  color: var(--text);
 }
