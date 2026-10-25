@@ -1,248 +1,258 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Samiksha Bhade | Backend Developer</title>
-    <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Samiksha Bhade | Game Engine &amp; Backend Developer</title>
+<meta name="description" content="Game Engine &amp; Backend Developer. Slot game engines in Node.js, Monte Carlo RTP simulation and real-time iGaming backends." />
+<meta property="og:title" content="Samiksha Bhade | Game Engine &amp; Backend Developer" />
+<meta property="og:description" content="Slot game engines, RTP simulation and iGaming backends in Node.js." />
+<link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+<script>document.documentElement.classList.add('js')</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#06060c;--tx:#ececf4;--mu:#9a9ab0;--ac:#a5a0ff;--tl:#5eead4;--mono:'JetBrains Mono',ui-monospace,Consolas,monospace}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--tx);font:400 16px/1.65 'Inter',system-ui,sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+.orb{position:fixed;border-radius:50%;filter:blur(90px);opacity:.55;z-index:-1;animation:fl 18s ease-in-out infinite alternate}
+.o1{width:520px;height:520px;background:#6d5dfc;top:-120px;left:-120px}
+.o2{width:460px;height:460px;background:#0ea5e9;top:30%;right:-140px;animation-delay:-6s}
+.o3{width:420px;height:420px;background:#14b8a6;bottom:-140px;left:25%;opacity:.35;animation-delay:-11s}
+@keyframes fl{to{transform:translate(70px,50px) scale(1.12)}}
+.glass{position:relative;overflow:hidden;border-radius:24px;border:1px solid rgba(255,255,255,.13);
+background:linear-gradient(135deg,rgba(255,255,255,.11),rgba(255,255,255,.03));
+-webkit-backdrop-filter:blur(24px) saturate(170%);backdrop-filter:blur(24px) saturate(170%);
+box-shadow:inset 0 1px 0 rgba(255,255,255,.22),inset 0 -1px 0 rgba(255,255,255,.04),0 24px 60px rgba(0,0,0,.4)}
+.glass::before{content:'';position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .3s;
+background:radial-gradient(420px circle at var(--mx,50%) var(--my,50%),rgba(255,255,255,.12),transparent 45%)}
+.glass:hover::before{opacity:1}
+nav{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:50;display:flex;align-items:center;gap:1.4rem;padding:.55rem .7rem .55rem 1.2rem;border-radius:999px;max-width:94vw}
+nav b{font:600 .9rem var(--mono);white-space:nowrap}nav b i{color:var(--ac);font-style:normal}
+nav .l{display:flex;gap:.2rem;overflow-x:auto;scrollbar-width:none}
+nav a{color:var(--mu);text-decoration:none;font-size:.85rem;padding:.4rem .75rem;border-radius:999px;white-space:nowrap;transition:.25s}
+nav a:hover{color:#fff;background:rgba(255,255,255,.1)}
+nav a.cta{background:#fff;color:#0a0a12;font-weight:600}
+main{max-width:1080px;margin:0 auto;padding:0 1.4rem}
+section{padding:5.5rem 0 1rem}
+.eyebrow{font:.75rem var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--ac);margin-bottom:.7rem}
+h2{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:700;letter-spacing:-.02em;line-height:1.15;margin-bottom:.8rem}
+.lead{color:var(--mu);max-width:620px;margin-bottom:2rem}
+.js .rv{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s}.js .rv.in{opacity:1;transform:none}
+/* hero */
+#hero{min-height:100vh;display:grid;grid-template-columns:1.1fr .9fr;gap:2.5rem;align-items:center;padding-top:7rem}
+.pill{display:inline-flex;align-items:center;gap:.5rem;padding:.35rem .9rem;border-radius:999px;font:.78rem var(--mono);margin-bottom:1.4rem}
+.pill::before{content:'';width:8px;height:8px;border-radius:50%;background:#4ade80;box-shadow:0 0 10px #4ade80;animation:pu 2s infinite}
+@keyframes pu{50%{opacity:.35}}
+h1{font-size:clamp(2.4rem,5.4vw,4.1rem);font-weight:800;letter-spacing:-.035em;line-height:1.05;margin-bottom:1.2rem}
+h1 span{background:linear-gradient(100deg,#c4b5fd,#7dd3fc 55%,#5eead4);-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{color:var(--mu);font-size:1.08rem;max-width:540px;margin-bottom:1.8rem}
+.btns{display:flex;gap:.8rem;flex-wrap:wrap;margin-bottom:1.8rem}
+.btn{padding:.8rem 1.5rem;border-radius:999px;text-decoration:none;font-weight:600;font-size:.92rem;border:1px solid rgba(255,255,255,.18);color:var(--tx);background:rgba(255,255,255,.07);transition:.25s}
+.btn:hover{background:rgba(255,255,255,.16);transform:translateY(-2px)}
+.btn.p{background:#fff;color:#0a0a12;border-color:#fff}.btn.p:hover{background:#e6e6ff}
+.stack{font:.8rem var(--mono);color:var(--mu)}.stack i{color:var(--ac);font-style:normal;margin:0 .35rem}
+.con{padding:1.2rem 1.3rem 1.3rem}
+.dots{display:flex;gap:6px;align-items:center;font:.72rem var(--mono);color:var(--mu);margin-bottom:1rem}
+.dots i{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.2)}.dots span{margin-left:.5rem}
+.big{font:700 2.8rem/1 var(--mono);letter-spacing:-.03em}.big small{font-size:.8rem;color:var(--mu);font-weight:400;margin-left:.4rem}
+.row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.6rem;font:.75rem var(--mono);color:var(--mu);margin-top:.9rem}
+.row b{color:var(--tx);font-weight:600}
+canvas{width:100%;height:auto;display:block;margin-top:1rem;border-radius:14px;background:rgba(0,0,0,.25);border:1px solid rgba(255,255,255,.08)}
+/* about + skills */
+.ab{display:grid;grid-template-columns:auto 1fr;gap:2rem;padding:2rem;align-items:center}
+.ab img{width:170px;height:170px;border-radius:50%;object-fit:cover;border:1px solid rgba(255,255,255,.25);box-shadow:0 0 0 8px rgba(255,255,255,.05),0 0 40px rgba(165,160,255,.3)}
+.ab p{color:var(--mu);margin-bottom:.8rem}.ab p:last-of-type{margin-bottom:1.2rem}
+.facts{display:flex;gap:1.6rem;flex-wrap:wrap;font-size:.85rem}.facts span{display:block;font:.68rem var(--mono);text-transform:uppercase;letter-spacing:.1em;color:var(--ac)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.2rem}
+.card{padding:1.5rem}
+.card h3{font-size:1.05rem;margin-bottom:.2rem}.tag{font:.74rem var(--mono);color:var(--tl);display:block;margin-bottom:.9rem}
+.chips{display:flex;flex-wrap:wrap;gap:.45rem}
+.chips span{font:.76rem var(--mono);padding:.3rem .7rem;border-radius:999px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);color:#d4d4e4}
+.sk h3{font:.74rem var(--mono);text-transform:uppercase;letter-spacing:.12em;color:var(--ac);margin-bottom:1rem}
+/* experience */
+.job{padding:1.8rem;margin-bottom:1.2rem}
+.jh{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-bottom:1rem}
+.jh h3{font-size:1.15rem}.jh p{color:var(--ac);font-size:.9rem}
+.date{font:.74rem var(--mono);padding:.25rem .8rem;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);height:fit-content;white-space:nowrap}
+.job ul{list-style:none;display:grid;gap:.6rem}.job li{color:var(--mu);font-size:.95rem;padding-left:1.3rem;position:relative}
+.job li::before{content:'';position:absolute;left:0;top:.7em;width:7px;height:7px;border-radius:2px;background:var(--ac);box-shadow:0 0 10px var(--ac)}
+/* engines */
+.flow{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:.5rem;padding:1.1rem;margin-bottom:1.2rem;font:.78rem var(--mono)}
+.flow div{padding:.4rem .8rem;border-radius:10px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12)}.flow em{color:var(--ac);font-style:normal}
+.cs{list-style:none;display:grid;gap:.65rem;margin-bottom:1.1rem}.cs li{font-size:.9rem;color:var(--mu)}
+.cs b{display:inline-block;min-width:62px;font:600 .68rem var(--mono);letter-spacing:.08em;color:var(--ac)}
+/* sim */
+.sim{padding:1.6rem}.sb{display:flex;gap:.7rem;flex-wrap:wrap;margin-bottom:1.2rem}
+.sb button{font:600 .85rem var(--mono);padding:.6rem 1.1rem;border-radius:999px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.07);color:var(--tx);cursor:pointer;transition:.25s}
+.sb button:hover{background:#fff;color:#0a0a12}
+.so{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:.8rem;margin-bottom:.4rem}
+.so div{padding:.8rem 1rem;border-radius:14px;background:rgba(0,0,0,.22);border:1px solid rgba(255,255,255,.08)}
+.so span{display:block;font:.66rem var(--mono);letter-spacing:.1em;color:var(--mu)}.so b{font:600 1.2rem var(--mono)}
+.note{font:.74rem var(--mono);color:var(--mu);margin-top:.9rem}
+.pd{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;margin-bottom:.8rem}.pd h3{font-size:1.1rem}
+/* contact */
+.ct{padding:3rem 2rem;text-align:center}.ct h2{margin-bottom:.6rem}.ct .btns{justify-content:center;margin:1.6rem 0 0}
+footer{text-align:center;color:var(--mu);font:.75rem var(--mono);padding:3rem 0 2rem}
+@media(max-width:820px){#hero{grid-template-columns:1fr;padding-top:6.5rem}.ab{grid-template-columns:1fr;text-align:center}.ab img{margin:auto}.facts{justify-content:center}nav b{display:none}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
 </head>
-
 <body>
-    <div class="cursor" id="cursor"></div>
+<div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div>
 
-    <!-- NAVBAR -->
-    <nav id="navbar">
-        <div class="nav-logo">Samiksha<span>.</span></div>
-        <ul class="nav-links">
-            <li><a href="#hero">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-        <div class="hamburger" id="hamburger">&#9776;</div>
-    </nav>
+<nav class="glass">
+  <b>samiksha<i>.dev</i></b>
+  <div class="l"><a href="#about">About</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#engines">Engines</a><a href="#simulator">Simulator</a><a href="#projects">Projects</a><a class="cta" href="#contact">Contact</a></div>
+</nav>
 
-    <!-- HERO -->
-    <section id="hero">
-        <h1>Hi, I'm <span>Samiksha Bhade</span></h1>
-        <p>Backend Developer · Node.js · REST APIs · WebSockets</p>
-        <div class="hero-buttons">
-            <a href="#projects">View Projects</a>
-            <a href="assets/resume.pdf" target="_blank">Download Resume</a>
-        </div>
-    </section>
+<main>
+<section id="hero">
+  <div>
+    <div class="pill glass">Open to opportunities</div>
+    <h1>I build slot engines and <span>prove the math holds.</span></h1>
+    <p class="sub">Samiksha Bhade, Game Engine &amp; Backend Developer. I turn certified par sheets into Node.js engines, validate them with multi-threaded Monte Carlo RTP simulation, and ship real-time backends for live iGaming platforms. When the numbers drift from the par sheet, I trace the cause, whether it's payout accounting, bet scaling or win-cap logic, and fix it before release. I work on GammaStack's Custom Games team, alongside backend work for three live sportsbook and casino platforms.</p>
+    <div class="btns"><a class="btn p" href="#engines">View my work</a><a class="btn" href="assets/resume.pdf" target="_blank" rel="noopener">Resume</a><a class="btn" href="#contact">Get in touch</a></div>
+    <div class="stack">Node.js<i>/</i>Worker Threads<i>/</i>WebSockets<i>/</i>SQL<i>/</i>AWS</div>
+  </div>
+  <div class="glass con">
+    <div class="dots"><i></i><i></i><i></i><span>rtp_sim.js · live demo</span></div>
+    <div class="big"><span id="h-rtp">0.00%</span><small>simulated RTP</small></div>
+    <canvas id="h-cv" width="560" height="260"></canvas>
+    <div class="row"><span>spins <b id="h-spins">0</b></span><span>hit rate <b id="h-hit">–</b></span><span>theoretical <b class="tg">–</b></span></div>
+  </div>
+</section>
 
-        <!-- ABOUT -->
-    <section id="about">
-    <h2>About Me</h2>
-    <div class="about-grid">
-        <div class="about-text">
-        <p>Backend Developer with 1+ year of experience building production-grade RESTful APIs and real-time systems for live iGaming platforms.</p>
-        <p>Delivered end-to-end backend features across 3 live platforms serving international markets — covering responsible gambling, gamification, affiliate management, and third-party integrations.</p>
-        <p>Passionate about writing clean, scalable code and solving real-world problems with technology.</p>
-        <div class="about-info">
-            <div><span>Location</span><p>Bengaluru, India</p></div>
-            <div><span>Email</span><p>samikshabhade80@gmail.com</p></div>
-            <div><span>Degree</span><p>B.E. Computer Science · CGPA 8.15</p></div>
-            <div><span>Status</span><p>Open to opportunities</p></div>
-        </div>
-        </div>
-        <div class="about-photo">
-        <img src="assets/profile.png" alt="Samiksha Bhade" />
-        </div>
+<section id="about" class="rv">
+  <div class="eyebrow">About</div><h2>Backend engineer, game-math minded.</h2>
+  <div class="glass ab">
+    <img src="assets/profile.png" alt="Samiksha Bhade" onerror="this.style.display='none'" />
+    <div>
+      <p>1.5+ years in iGaming at GammaStack, on the Custom Games team. I implement par sheets as engines (payline, ways and cluster pays, free spins, buy feature, win capping) and verify them with Monte Carlo simulation, then use the gaps to find bugs.</p>
+      <p>Alongside the engines, I've built REST APIs, WebSocket systems and third-party integrations for three live sportsbook and casino platforms.</p>
+      <div class="facts"><div><span>Based in</span>Bengaluru, India</div><div><span>Degree</span>B.E. Computer Science · 8.15 CGPA</div><div><span>Role</span>Solution Engineer</div></div>
     </div>
-    </section>
+  </div>
+</section>
 
-    <!-- SKILLS -->
-    <section id="skills">
-        <h2>Skills</h2>
-        <div class="skills-grid">
-            <div class="skill-category">
-                <h3>Languages</h3>
-                <div class="chips">
-                    <span>JavaScript (ES6+)</span>
-                    <span>Java</span>
-                    <span>SQL</span>
-                </div>
-            </div>
-            <div class="skill-category">
-                <h3>Backend</h3>
-                <div class="chips">
-                    <span>Node.js</span>
-                    <span>Express.js</span>
-                    <span>REST APIs</span>
-                    <span>WebSockets</span>
-                    <span>JWT Auth</span>
-                    <span>Queue Workers</span>
-                </div>
-            </div>
-            <div class="skill-category">
-                <h3>Database</h3>
-                <div class="chips">
-                    <span>MySQL</span>
-                    <span>PostgreSQL</span>
-                    <span>Schema Design</span>
-                    <span>Query Optimisation</span>
-                </div>
-            </div>
-            <div class="skill-category">
-                <h3>Tools</h3>
-                <div class="chips">
-                    <span>Git</span>
-                    <span>GitHub</span>
-                    <span>Docker</span>
-                    <span>Postman</span>
-                    <span>VS Code</span>
-                </div>
-            </div>
-        </div>
-    </section>
+<section id="skills" class="rv">
+  <div class="eyebrow">Skills</div><h2>The toolbox.</h2>
+  <div class="grid">
+    <div class="glass card sk"><h3>Game engine &amp; simulation</h3><div class="chips"><span>Slot Engines</span><span>Par Sheets</span><span>RTP Simulation</span><span>Payline / Ways / Cluster</span><span>Free Spin &amp; Buy Feature</span><span>Win Capping</span><span>Volatility</span><span>HMAC-SHA256 RNG</span></div></div>
+    <div class="glass card sk"><h3>Backend</h3><div class="chips"><span>Node.js</span><span>Express.js</span><span>REST APIs</span><span>WebSockets</span><span>JWT</span><span>Worker Threads</span><span>Queue Workers</span></div></div>
+    <div class="glass card sk"><h3>Languages &amp; data</h3><div class="chips"><span>JavaScript ES6+</span><span>SQL</span><span>Python</span><span>MySQL</span><span>PostgreSQL</span><span>Sequelize</span><span>Drizzle</span><span>Redis</span></div></div>
+    <div class="glass card sk"><h3>Cloud &amp; tools</h3><div class="chips"><span>AWS</span><span>Docker</span><span>Git</span><span>GitHub</span><span>GitLab</span><span>Postman</span><span>Mailjet</span><span>Customer.io</span></div></div>
+  </div>
+</section>
 
-    <!-- EXPERIENCE -->
-    <section id="experience">
-        <h2>Experience</h2>
-        <div class="exp-list">
+<section id="experience" class="rv">
+  <div class="eyebrow">Experience</div><h2>Where I've worked.</h2>
+  <div class="glass job">
+    <div class="jh"><div><h3>Solution Engineer · Game Engine &amp; Backend Developer</h3><p>GammaStack · Bengaluru</p></div><span class="date">Mar 2025 – Present</span></div>
+    <ul>
+      <li>Build slot engines in Node.js from certified par sheets: payline, ways and cluster-pay evaluation, wild multipliers, sticky wilds, buy-feature and ante modes, 10000x max-win capping.</li>
+      <li>Built a multi-threaded RTP simulation harness (worker threads) with per-symbol contribution, win-distribution buckets and streaming variance to validate RTP and volatility against par sheets.</li>
+      <li>Fixed a max-win cap bug (applied per free spin instead of per round) and a production crash in free-spin bet placement.</li>
+      <li>Wrote precision-testing and forced-outcome (FOE) generator scripts across BRL, EUR, USD and TRY bet lists.</li>
+      <li>Built REST APIs, WebSocket systems and queue-worker integrations (Mailjet, Customer.io, SMSCountry) for 3 live sportsbook and casino platforms; optimised SQL for KYC, transaction and reporting modules.</li>
+    </ul>
+  </div>
+  <div class="glass job">
+    <div class="jh"><div><h3>Full Stack Developer Intern</h3><p>Kodnest · Bengaluru</p></div><span class="date">Jun 2024 – Feb 2025</span></div>
+    <ul>
+      <li>Built end-to-end full-stack applications using Java, SQL, HTML, CSS and JavaScript in MVC architecture.</li>
+      <li>Practised role-based authentication patterns and code review best practices across team projects.</li>
+      <li>Strengthened my understanding of distributed client-server systems and performance optimisation.</li>
+    </ul>
+  </div>
+</section>
 
-            <div class="exp-card">
-                <div class="exp-header">
-                    <div>
-                        <h3>Solution Engineer — Backend Developer</h3>
-                        <p class="company">GammaStack · Bengaluru</p>
-                    </div>
-                    <span class="date">Mar 2025 – Present</span>
-                </div>
-                <ul>
-                    <li>Built production RESTful APIs for 3 live iGaming platforms (Sportsbook & Casino) serving
-                        international users</li>
-                    <li>Developed real-time WebSocket systems for bonus alerts, tournament updates, and group chat</li>
-                    <li>Integrated Mailjet, Customer.io, SMSCountry — built async queue workers for high-throughput
-                        processing</li>
-                    <li>Optimised SQL schemas and queries for KYC, transactions, and reporting modules</li>
-                </ul>
-            </div>
+<section id="engines" class="rv">
+  <div class="eyebrow">Slot engines</div><h2>From par sheet to verified engine.</h2>
+  <p class="lead">Case studies cover mechanics and bugs only, never client math.</p>
+  <div class="glass flow"><div>Par sheet</div><em>→</em><div>Settings JSON</div><em>→</em><div>Engine: base · free · buy</div><em>→</em><div>Worker-thread simulation</div><em>→</em><div>RTP &amp; volatility report</div></div>
+  <div class="grid">
+    <div class="glass card"><h3>Wild West Gold</h3><span class="tag">5x4 · 40 paylines</span>
+      <ul class="cs"><li><b>BUILT</b>Weighted wild multipliers, sticky wilds, overlay-scatter retriggers, buy feature, 10000x cap.</li><li><b>BUG</b>RTP inflated ~10x when total bet changed.</li><li><b>CAUSE</b>Hardcoded line bet; paytable tied to a fixed bet unit.</li><li><b>FIX</b>Payouts scaled by lines and actual bet.</li></ul>
+      <div class="chips"><span>Node.js</span><span>Docker</span><span>Python</span></div></div>
+    <div class="glass card"><h3>Sweet Bonanza</h3><span class="tag">Cluster-pays tumble</span>
+      <ul class="cs"><li><b>BUILT</b>Cluster tumble engine with base and buy modes.</li><li><b>BUG</b>Base RTP ~1.4% above par sheet target.</li><li><b>CAUSE</b>Scatter payout folded into base payout on free-game trigger.</li><li><b>SPEED</b>Simulation moved from a ~4h single-threaded run to all CPU cores.</li></ul>
+      <div class="chips"><span>Worker Threads</span><span>Monte Carlo</span></div></div>
+    <div class="glass card"><h3>Third engine</h3><span class="tag">In progress · 5x3</span>
+      <ul class="cs"><li><b>BUILDING</b>Scatter-move respins, hook feature, money-symbol collection, retrigger multiplier levels, five free-game modifiers.</li><li><b>NOW</b>Debugging free-game RTP against its par sheet.</li></ul>
+      <div class="chips"><span>Node.js</span><span>Simulation Harness</span></div></div>
+  </div>
+</section>
 
-            <div class="exp-card">
-                <div class="exp-header">
-                    <div>
-                        <h3>Full Stack Developer Intern</h3>
-                        <p class="company">Kodnest · Bengaluru</p>
-                    </div>
-                    <span class="date">Jun 2024 – Feb 2025</span>
-                </div>
-                <ul>
-                    <li>Built end-to-end full-stack apps using Java, SQL, HTML, CSS, JavaScript in MVC architecture</li>
-                    <li>Practiced role-based auth patterns and code review best practices across team projects</li>
-                    <li>Strengthened understanding of distributed client-server systems and performance optimisation
-                    </li>
-                </ul>
-            </div>
+<section id="simulator" class="rv">
+  <div class="eyebrow">Simulator</div><h2>Watch RTP converge.</h2>
+  <p class="lead">An original toy game, not a client engine. Run Monte Carlo spins and the simulated RTP settles onto the value computed exactly from the reel weights.</p>
+  <div class="glass sim">
+    <div class="sb"><button data-n="10000">10K spins</button><button data-n="100000">100K spins</button><button data-n="1000000">1M spins</button></div>
+    <div class="so"><div><span>SPINS</span><b id="s-spins">0</b></div><div><span>SIMULATED RTP</span><b id="s-rtp">–</b></div><div><span>THEORETICAL</span><b class="tg">–</b></div><div><span>HIT RATE</span><b id="s-hit">–</b></div></div>
+    <canvas id="s-cv" width="900" height="280"></canvas>
+    <p class="note">3 reels · 5 symbols · 3-of-a-kind pays · Math.random(). Small runs swing wildly, large runs converge.</p>
+  </div>
+</section>
 
-        </div>
-    </section>
+<section id="projects" class="rv">
+  <div class="eyebrow">Platforms</div><h2>Live platform backends.</h2>
+  <div class="grid">
+    <div class="glass card"><div class="pd"><h3>Betcheif</h3><span class="date">6 months</span></div><span class="tag">Nigerian iGaming platform</span><p style="color:var(--mu);font-size:.92rem;margin-bottom:1rem">CRUD APIs for tournaments, bonuses, player management, bank reports and casino modules, plus advanced filtering, manual KYC workflows and secure password reset.</p><div class="chips"><span>Node.js</span><span>Express</span><span>SQL</span><span>Sequelize</span></div></div>
+    <div class="glass card"><div class="pd"><h3>Flextrade</h3><span class="date">1.5 months</span></div><span class="tag">Sportsbook &amp; casino</span><p style="color:var(--mu);font-size:.92rem;margin-bottom:1rem">Responsible-gambling limits (deposit, withdrawal, bet, loss), Mailjet emails, queue workers for tournament events and a WebSocket bonus notification system.</p><div class="chips"><span>Node.js</span><span>SQL</span><span>Mailjet</span><span>WebSockets</span></div></div>
+    <div class="glass card"><div class="pd"><h3>Micro Maldives</h3><span class="date">Ongoing</span></div><span class="tag">Casino platform</span><p style="color:var(--mu);font-size:.92rem;margin-bottom:1rem">Gamification engine, loyalty, referrals and affiliates; JWT auth with SMSCountry OTP, Customer.io campaigns, real-time group chat and moderation.</p><div class="chips"><span>Node.js</span><span>JWT</span><span>Customer.io</span><span>WebSockets</span></div></div>
+  </div>
+</section>
 
-    <!-- PROJECTS -->
-    <section id="projects">
-        <h2>Projects</h2>
-        <div class="proj-grid">
+<section id="contact" class="rv">
+  <div class="glass ct">
+    <div class="eyebrow">Contact</div><h2>Let's build something that pays out fairly.</h2>
+    <p class="lead" style="margin:0 auto">Open to game engine and iGaming backend roles. Bengaluru, India.</p>
+    <div class="btns"><a class="btn p" href="mailto:samikshabhade80@gmail.com">samikshabhade80@gmail.com</a><a class="btn" href="https://linkedin.com/in/samikshabhade66" target="_blank" rel="noopener">LinkedIn</a><a class="btn" href="https://github.com/SamikshaB-14" target="_blank" rel="noopener">GitHub</a></div>
+  </div>
+</section>
+<footer>© Samiksha Bhade · designed &amp; built by hand</footer>
+</main>
 
-            <div class="proj-card">
-                <div class="proj-top">
-                    <h3>Betcheif</h3>
-                    <span class="date">6 months</span>
-                </div>
-                <p class="proj-market">Nigerian iGaming Platform</p>
-                <p class="proj-desc">Built CRUD APIs for tournaments, bonuses, back-office player management, bank
-                    reports, and casino modules. Delivered advanced filtering, manual KYC workflows, and secure
-                    password-reset flows.</p>
-                <div class="chips">
-                    <span>Node.js</span>
-                    <span>Express.js</span>
-                    <span>SQL</span>
-                    <span>Sequelize</span>
-                </div>
-            </div>
+<script>
+// glass spotlight + reveal
+document.querySelectorAll('.glass').forEach(el=>el.addEventListener('mousemove',e=>{const r=el.getBoundingClientRect();el.style.setProperty('--mx',e.clientX-r.left+'px');el.style.setProperty('--my',e.clientY-r.top+'px')}));
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.rv').forEach(s=>io.observe(s));
 
-            <div class="proj-card">
-                <div class="proj-top">
-                    <h3>Flextrade</h3>
-                    <span class="date">1.5 months</span>
-                </div>
-                <p class="proj-market">Sportsbook & Casino Platform</p>
-                <p class="proj-desc">Implemented full responsible gambling suite with deposit, withdrawal, bet and loss
-                    limits. Integrated Mailjet for transactional emails and built WebSocket-based bonus notification
-                    system.</p>
-                <div class="chips">
-                    <span>Node.js</span>
-                    <span>SQL</span>
-                    <span>Mailjet</span>
-                    <span>WebSockets</span>
-                </div>
-            </div>
-
-            <div class="proj-card">
-                <div class="proj-top">
-                    <h3>Micro Maldives</h3>
-                    <span class="date">2 months · Ongoing</span>
-                </div>
-                <p class="proj-market">Casino Platform</p>
-                <p class="proj-desc">Built gamification engine, loyalty program, referral system, and affiliate
-                    management. Integrated Customer.io for lifecycle emails and SMSCountry for OTP auth. Real-time group
-                    chat and moderation.</p>
-                <div class="chips">
-                    <span>Node.js</span>
-                    <span>JWT</span>
-                    <span>Customer.io</span>
-                    <span>WebSockets</span>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact">
-        <h2>Contact</h2>
-        <div class="contact-grid">
-            <a href="mailto:samikshabhade80@gmail.com" class="contact-card">
-                <span class="contact-icon">✉</span>
-                <div>
-                    <p class="contact-label">Email</p>
-                    <p class="contact-value">samikshabhade80@gmail.com</p>
-                </div>
-            </a>
-            <a href="https://linkedin.com/in/samikshabhade66" target="_blank" class="contact-card">
-                <span class="contact-icon">in</span>
-                <div>
-                    <p class="contact-label">LinkedIn</p>
-                    <p class="contact-value">samikshabhade66</p>
-                </div>
-            </a>
-            <a href="https://github.com/SamikshaB-14" target="_blank" class="contact-card">
-                <span class="contact-icon">gh</span>
-                <div>
-                    <p class="contact-label">GitHub</p>
-                    <p class="contact-value">SamikshaB-14</p>
-                </div>
-            </a>
-            <div class="contact-card">
-                <span class="contact-icon">📍</span>
-                <div>
-                    <p class="contact-label">Location</p>
-                    <p class="contact-value">Bengaluru, India</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer>
-        <p>Designed & Built by Samiksha Bhade</p>
-    </footer>
-
-    <script src="script.js"></script>
+// Monte Carlo demo: original toy game. [symbol, reel weight, 3-of-a-kind payout]
+const SYM=[['7',2,200],['BAR',5,50],['BELL',10,20],['CHERRY',20,12],['LEMON',30,6]];
+const TW=SYM.reduce((a,s)=>a+s[1],0);
+const TARGET=SYM.reduce((a,s)=>a+Math.pow(s[1]/TW,3)*s[2],0);
+document.querySelectorAll('.tg').forEach(e=>e.textContent=(TARGET*100).toFixed(2)+'%');
+const pick=()=>{let r=Math.random()*TW;for(const s of SYM){if((r-=s[1])<0)return s}return SYM[4]};
+function draw(cv,pts){
+  const c=cv.getContext('2d'),W=cv.width,H=cv.height,lo=TARGET*.4,hi=TARGET*1.6;
+  const y=v=>H-8-((Math.min(Math.max(v,lo),hi)-lo)/(hi-lo))*(H-16);
+  c.clearRect(0,0,W,H);
+  c.setLineDash([6,6]);c.strokeStyle='#5eead4';c.lineWidth=1.5;c.beginPath();c.moveTo(0,y(TARGET));c.lineTo(W,y(TARGET));c.stroke();c.setLineDash([]);
+  if(pts.length<2)return;
+  const X=i=>2+i/(pts.length-1)*(W-4);
+  const g=c.createLinearGradient(0,0,0,H);g.addColorStop(0,'rgba(165,160,255,.35)');g.addColorStop(1,'rgba(165,160,255,0)');
+  c.beginPath();pts.forEach((v,i)=>i?c.lineTo(X(i),y(v)):c.moveTo(X(i),y(v)));
+  c.strokeStyle='#a5a0ff';c.lineWidth=2.2;c.stroke();
+  c.lineTo(X(pts.length-1),H);c.lineTo(X(0),H);c.fillStyle=g;c.fill();
+}
+function run(cv,o,total,done){
+  let n=0,won=0,hit=0;const pts=[],ch=Math.ceil(total/160);
+  (function f(){
+    for(let i=0;i<ch&&n<total;i++,n++){const a=pick(),b=pick(),c=pick();if(a===b&&b===c){won+=a[2];hit++}}
+    pts.push(won/n);draw(cv,pts);
+    o.spins.textContent=n.toLocaleString();o.rtp.textContent=(won/n*100).toFixed(2)+'%';o.hit.textContent=(hit/n*100).toFixed(2)+'%';
+    n<total?requestAnimationFrame(f):done&&done();
+  })();
+}
+const $=id=>document.getElementById(id);
+const heroO={spins:$('h-spins'),rtp:$('h-rtp'),hit:$('h-hit')};
+const still=matchMedia('(prefers-reduced-motion:reduce)').matches;
+(function loop(){run($('h-cv'),heroO,1e6,()=>{if(!still)setTimeout(loop,3500)})})();
+let busy=false;const simO={spins:$('s-spins'),rtp:$('s-rtp'),hit:$('s-hit')};
+document.querySelectorAll('.sb button').forEach(b=>b.addEventListener('click',()=>{if(busy)return;busy=true;run($('s-cv'),simO,+b.dataset.n,()=>busy=false)}));
+</script>
 </body>
-
 </html>
